@@ -1,6 +1,10 @@
 import pandas as pd
+import os
 
-tabela = pd.read_csv("tabela.csv", sep=";")
+
+caminho_script = os.path.dirname(__file__)
+caminho_csv = os.path.join(caminho_script, "tabela.csv")
+tabela = pd.read_csv(caminho_csv, sep=";")
 
 # FILTRO JUNTO COM A TABELA
 

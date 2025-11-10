@@ -1,5 +1,5 @@
 import pandas as pd
-
+import os
 
 # CARREGANDO UMA TABELA
 
@@ -9,7 +9,10 @@ dicionario = {
 }
 
 tabela = pd.DataFrame(dicionario)
-tabela = pd.read_csv("excel.csv", sep=";")
+
+caminho_script = os.path.dirname(__file__)
+caminho_csv = os.path.join(caminho_script, "tabela.csv")
+tabela = pd.read_csv(caminho_csv, sep=";")
 
 
 # EXPLORANDO O DATAFRAME
